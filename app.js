@@ -17,6 +17,12 @@ mongoose
     console.error("error", e);
   });
 
+app.message = "Hello from Node API!";
+
+app.get("/", (req, res) => {
+  res.json({ message: app.message });
+});
+
 const signAccessToken = (userid) => {
   console.log("Signing Access Token for userId: ", userid);
   console.log("JWT", process.env.JWT_SECRET);
